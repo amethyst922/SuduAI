@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at SuDu AI - Build the Future</title>
+    <meta name="description"
+        content="Join SuDu AI and help us build the first AI-native MES ERP for modern manufacturing. Explore career opportunities and join our team.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'sudu-main': '#011916',
+                        'sudu-sec': '#35E5A2',
+                        brand: {
+                            400: '#35E5A2',
+                            600: '#059669',
+                            900: '#011916',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at center, rgba(53, 229, 162, 0.1) 0%, transparent 70%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #4b5563;
+        }
+
+        .dark-section {
+            background-color: #011916;
+            color: #ffffff;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 30px rgba(53, 229, 162, 0.3);
+        }
+
+        /* Animation Classes */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-sudu-sec/30 selection:text-sudu-sec">
+
+    <!-- Navbar -->
+    <nav
+        class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 transition-all duration-300 border border-white/10 bg-white/50 backdrop-blur-xl rounded-[10px] px-6 h-14 flex items-center justify-between shadow-2xl shadow-black/50">
+        <div class="flex items-center gap-2">
+            <a href="index.html" class="flex items-center gap-2">
+                <div
+                    class="w-6 h-6 bg-gradient-to-br from-sudu-sec to-emerald-600 rounded flex items-center justify-center text-black font-bold text-xs shadow-lg shadow-sudu-sec/20">
+                    S</div>
+                <span class="text-sm font-semibold tracking-tight text-gray-900">SuDu AI</span>
+            </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-6 text-xs font-medium text-[#003406]">
+            <a href="product.html" class="hover:text-sudu-sec transition-colors">Product</a>
+            <a href="pricing.html" class="hover:text-sudu-sec transition-colors">Pricing</a>
+            <a href="partner.html" class="hover:text-sudu-sec transition-colors">Partner</a>
+            <a href="#user-guide" class="hover:text-sudu-sec transition-colors">User Guide</a>
+            <a href="careers.html" class="hover:text-sudu-sec transition-colors">Career</a>
+            <a href="contact.html" class="hover:text-sudu-sec transition-colors">Contact Us</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <!-- Desktop CTA -->
+            <a href="waitlist.html"
+                class="hidden md:block text-xs text-white font-medium bg-[#003406] hover:bg-sudu-sec/20 text-black px-4 py-1.5 rounded-[10px] border border-sudu-sec/20 transition-all hover:shadow-[0_0_15px_rgba(53,229,162,0.3)]">Join
+                The Waitlist</a>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-black p-2 hover:text-sudu-sec transition-colors">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu"
+        class="fixed top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 bg-white/50 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-95">
+        <div class="flex flex-col p-6 space-y-4">
+            <a href="product.html"
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Product</a>
+            <a href="pricing.html"
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Pricing</a>
+            <a href="partner.html"
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Partner</a>
+            <a href="#user-guide" class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">User
+                Guide</a>
+            <a href="careers.html"
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Career</a>
+            <a href="contact.html"
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Contact
+                Us</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="waitlist.html"
+                    class="block text-center text-sm text-white font-medium bg-[#003406] hover:bg-sudu-sec/20 text-black px-4 py-2.5 rounded-full border border-sudu-sec/20 transition-all">Join
+                    The Waitlist</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isMenuOpen = false;
+
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+                } else {
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                }
+            });
+
+            // Close menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    isMenuOpen = false;
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    isMenuOpen = false;
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                }
+            });
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-20 px-6 bg-[#FFFBF5] overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/hero-bg.png" alt="Background" class="w-full h-full object-cover opacity-100">
+        </div>
+
+        <!-- Hero Content -->
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="animate-fade-in-up text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6 font-sans">
+                Build the Future with <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-[#35E5A2] to-[#33DDFF]">SuDu AI</span>
+            </h1>
+            <p
+                class="animate-fade-in-up delay-100 text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Join our mission to transform manufacturing with AI. We're looking for passionate individuals to help us
+                redefine what's possible.
+            </p>
+            <div class="flex justify-center animate-fade-in-up delay-200">
+                <a href="#opportunities"
+                    class="px-8 py-3 bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] text-white font-semibold rounded-full hover:bg-black transition-all shadow-xl hover:shadow-sudu-main/20">
+                    Join Us →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture & Values Section -->
+    <section class="py-32 px-6 dark-section relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-sudu-sec rounded-lg rotate-3 flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-sudu-main"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold tracking-tight">Our Culture & Values</h2>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-xl">
+                        We promote a culture of transparency, innovation, and direct communication. Our values are the
+                        foundation of everything we build.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <!-- Value 1 -->
+                        <div class="reveal-on-scroll space-y-3">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-sudu-sec">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold">Values</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Sed do eiusmod tempor.</p>
+                        </div>
+                        <!-- Value 2 -->
+                        <div class="reveal-on-scroll delay-100 space-y-3">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-sudu-sec">
+                                <i data-lucide="target" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold">Values</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Sed do eiusmod tempor.</p>
+                        </div>
+                        <!-- Value 3 -->
+                        <div class="reveal-on-scroll delay-200 space-y-3">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-sudu-sec">
+                                <i data-lucide="users" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold">Values</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Sed do eiusmod tempor.</p>
+                        </div>
+                        <!-- Value 4 -->
+                        <div class="reveal-on-scroll delay-300 space-y-3">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-sudu-sec">
+                                <i data-lucide="heart" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold">Values</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Sed do eiusmod tempor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="aspect-square rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
+                        <!-- Placeholder for Culture Image/Graphic -->
+                        <div
+                            class="w-full h-full bg-gradient-to-br from-emerald-900/40 to-sudu-main flex items-center justify-center p-12">
+                            <div
+                                class="w-full h-full rounded-2xl bg-white/5 flex items-center justify-center border border-white/10">
+                                <i data-lucide="image" class="w-12 h-12 text-white/20"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Small Floaties -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-sudu-sec/20 rounded-2xl blur-2xl"></div>
+                    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="py-32 px-6 bg-[#FFFBF5]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Why Join <span class="text-sudu-sec">SuDu AI?</span>
+                </h2>
+                <p class="text-gray-500 text-sm">We're not just building software, we're building a smarter future for
+                    manufacturing.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+                <!-- Why 01 -->
+                <div class="reveal-on-scroll space-y-4 border-t border-gray-100 pt-8 relative">
+                    <div class="text-5xl font-light text-gray-100 absolute -top-4 left-0 select-none">01</div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Score Big and Celebrate</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We celebrate our wins, both big and small. We
+                        believe that acknowledging hard work is key to a healthy culture.</p>
+                </div>
+                <!-- Why 02 -->
+                <div class="reveal-on-scroll delay-100 space-y-4 border-t border-gray-100 pt-8 relative">
+                    <div class="text-5xl font-light text-gray-100 absolute -top-4 left-0 select-none">02</div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Chill, Collaborative Vibes</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Our workspace is designed for focus and
+                        collaboration. We maintain a relaxed atmosphere where everyone's voice is heard.</p>
+                </div>
+                <!-- Why 03 -->
+                <div class="reveal-on-scroll delay-200 space-y-4 border-t border-gray-100 pt-8 relative">
+                    <div class="text-5xl font-light text-gray-100 absolute -top-4 left-0 select-none">03</div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">No Dress Code</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Be yourself. We care about your impact and ideas,
+                        not what you wear. Come as you are, comfortably.</p>
+                </div>
+                <!-- Why 04 -->
+                <div class="reveal-on-scroll space-y-4 border-t border-gray-100 pt-8 relative">
+                    <div class="text-5xl font-light text-gray-100 absolute -top-4 left-0 select-none">04</div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Count the memories not calories</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We organize regular team outings, lunches, and
+                        events to build lasting bonds beyond the computer screen.</p>
+                </div>
+                <!-- Why 05 -->
+                <div class="reveal-on-scroll delay-100 space-y-4 border-t border-gray-100 pt-8 relative">
+                    <div class="text-5xl font-light text-gray-100 absolute -top-4 left-0 select-none">05</div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Flexibility for Better Balance</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We support flexible working hours because we know
+                        that life happens. We value outcomes over hours at the desk.</p>
+                </div>
+                <!-- Why 06 -->
+                <div class="reveal-on-scroll delay-200 space-y-4 border-t border-gray-100 pt-8 relative">
+                    <div class="text-5xl font-light text-gray-100 absolute -top-4 left-0 select-none">06</div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Making an Impact from Day One</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">You'll work on real products used by real
+                        businesses. Your contributions will be visible and valued immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities Section -->
+    <section id="opportunities" class="py-32 px-6 bg-[#F8FFFE] relative overflow-hidden">
+        <!-- SVG Decorations from Image -->
+        <div class="absolute inset-0 pointer-events-none -z-10">
+            <svg class="w-full h-full opacity-[0.05]" viewBox="0 0 1440 800" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M 1200 200 Q 1200 400 1440 500" stroke="#35E5A2" stroke-width="2" stroke-linecap="round" />
+                <path d="M 0 600 Q 200 600 400 800" stroke="#35E5A2" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Career Opportunities</h2>
+                <p class="text-gray-500 text-sm">Choose the category that fits your skills and passion.</p>
+            </div>
+
+            <!-- Technical Roles -->
+            <div class="space-y-6 mb-16">
+                <div class="flex items-center gap-3 text-sudu-sec font-bold">
+                    <i data-lucide="plus" class="w-5 h-5"></i>
+                    <h3 class="tracking-wider">Technical Roles</h3>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Job Item -->
+                    <a href="#"
+                        class="reveal-on-scroll group bg-white border border-gray-100 p-6 rounded-2xl flex items-center justify-between hover:border-sudu-sec transition-all shadow-sm">
+                        <span class="text-gray-900 font-bold">Senior Full-Stack Developer</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-sudu-sec group-hover:border-sudu-sec transition-all">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
+                        </div>
+                    </a>
+                    <a href="#"
+                        class="reveal-on-scroll delay-100 group bg-white border border-gray-100 p-6 rounded-2xl flex items-center justify-between hover:border-sudu-sec transition-all shadow-sm">
+                        <span class="text-gray-900 font-bold">AI Product Manager</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-sudu-sec group-hover:border-sudu-sec transition-all">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
+                        </div>
+                    </a>
+                    <a href="#"
+                        class="reveal-on-scroll delay-200 group bg-white border border-gray-100 p-6 rounded-2xl flex items-center justify-between hover:border-sudu-sec transition-all shadow-sm">
+                        <span class="text-gray-900 font-bold">Senior Backend Developer</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-sudu-sec group-hover:border-sudu-sec transition-all">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Functional Roles -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 text-sudu-sec font-bold">
+                    <i data-lucide="plus" class="w-5 h-5"></i>
+                    <h3 class="tracking-wider">Functional & Industry Roles</h3>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Job Item -->
+                    <a href="#"
+                        class="reveal-on-scroll group bg-white border border-gray-100 p-6 rounded-2xl flex items-center justify-between hover:border-sudu-sec transition-all shadow-sm">
+                        <span class="text-gray-900 font-bold">Sales & Operations Specialist</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-sudu-sec group-hover:border-sudu-sec transition-all">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
+                        </div>
+                    </a>
+                    <a href="#"
+                        class="reveal-on-scroll delay-100 group bg-white border border-gray-100 p-6 rounded-2xl flex items-center justify-between hover:border-sudu-sec transition-all shadow-sm">
+                        <span class="text-gray-900 font-bold">Senior Backend Developer</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-sudu-sec group-hover:border-sudu-sec transition-all">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Internship Card -->
+            <div
+                class="mt-12 bg-gradient-to-r from-[#1B3936] to-[#35E5A2] rounded-3xl p-1 flex items-center overflow-hidden">
+                <div class="flex-1 bg-emerald-900/10 rounded-2xl p-8 flex items-center justify-between">
+                    <div>
+                        <h4 class="text-xs font-bold text-white mb-1">Join our Internship Program</h4>
+                        <p class="text-[10px] text-white">Launch your career with hands-on experience in AI and
+                            ERP solutions.</p>
+                    </div>
+                    <a href="#"
+                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-emerald-900"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits & Perks Section -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Benefits & Perks</h2>
+                <p class="text-gray-500 text-sm">We take care of our team so they can focus on what they do best.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Perk 01 -->
+                <div
+                    class="reveal-on-scroll bg-gray-50 p-8 rounded-[32px] border border-gray-100 relative group hover:bg-white hover:shadow-xl transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec group-hover:bg-sudu-sec group-hover:text-white transition-all">
+                            <i data-lucide="gift" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-light text-gray-200">01</span>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Benefits</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Sed do eiusmod tempor.</p>
+                </div>
+                <!-- Perk 02 -->
+                <div
+                    class="reveal-on-scroll delay-100 bg-gray-50 p-8 rounded-[32px] border border-gray-100 relative group hover:bg-white hover:shadow-xl transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec group-hover:bg-sudu-sec group-hover:text-white transition-all">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-light text-gray-200">02</span>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Benefits</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Sed do eiusmod tempor.</p>
+                </div>
+                <!-- Perk 03 -->
+                <div
+                    class="reveal-on-scroll delay-200 bg-gray-50 p-8 rounded-[32px] border border-gray-100 relative group hover:bg-white hover:shadow-xl transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec group-hover:bg-sudu-sec group-hover:text-white transition-all">
+                            <i data-lucide="coffee" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-light text-gray-200">03</span>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Benefits</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Sed do eiusmod tempor.</p>
+                </div>
+                <!-- Perk 04 -->
+                <div
+                    class="reveal-on-scroll delay-300 bg-gray-50 p-8 rounded-[32px] border border-gray-100 relative group hover:bg-white hover:shadow-xl transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec group-hover:bg-sudu-sec group-hover:text-white transition-all">
+                            <i data-lucide="smile" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-light text-gray-200">04</span>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Benefits</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Sed do eiusmod tempor.</p>
+                </div>
+                <!-- Perk 05 -->
+                <div
+                    class="reveal-on-scroll delay-400 bg-gray-50 p-8 rounded-[32px] border border-gray-100 relative group hover:bg-white hover:shadow-xl transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec group-hover:bg-sudu-sec group-hover:text-white transition-all">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-light text-gray-200">05</span>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Benefits</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Sed do eiusmod tempor.</p>
+                </div>
+                <!-- Perk 06 -->
+                <div
+                    class="reveal-on-scroll delay-500 bg-gray-50 p-8 rounded-[32px] border border-gray-100 relative group hover:bg-white hover:shadow-xl transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec group-hover:bg-sudu-sec group-hover:text-white transition-all">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-light text-gray-200">06</span>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Benefits</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Sed do eiusmod tempor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Banner -->
+    <section class="py-32 px-6 dark-section relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 mb-8">
+                <div class="w-2 h-2 bg-sudu-sec rounded-full animate-pulse"></div>
+                <span class="text-sudu-sec uppercase tracking-[0.2em] text-xs font-bold">SuDu AI Vision</span>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-12">
+                We Don't Just Create. <br>
+                We Innovate. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sudu-sec to-emerald-400">We Make Life
+                    Easier.</span>
+            </h2>
+            <p class="text-emerald-500 font-bold opacity-60">— SuDu AI</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-32 relative overflow-hidden bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12 flex flex-col items-center">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[12px] text-gray-500 mb-4 shadow-sm">
+                    <span>Had some Questions?</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#011916] tracking-tight">Frequently Asked Questions</h2>
+            </div>
+
+            <!-- FAQ Items -->
+            <div class="space-y-3">
+
+                <!-- FAQ Item 1 -->
+                <details
+                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
+                    <summary
+                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
+                        <span>What is the right plan for me?</span>
+                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
+                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
+                        </span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        Find all the tools you'll need to create advanced websites in one place. Stop waisting time
+                        searching for solutions.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details
+                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
+                    <summary
+                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
+                        <span>What does the free plan include?</span>
+                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
+                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
+                        </span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        Absolutely. Role-based access control (RBAC) allows you to define exactly what each user—and the
+                        AI agent—can authorize. For example, shift supervisors might approve POs up to $500, while the
+                        AI can auto-approve routine reorders under $100.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details
+                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
+                    <summary
+                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
+                        <span>What is a credit?</span>
+                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
+                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
+                        </span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        We prioritize security with SOC2 Type II compliance, end-to-end encryption for all data transit,
+                        and dedicated private cloud deployment options for enterprise clients.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details
+                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
+                    <summary
+                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
+                        <span>How does usage-based pricing work?</span>
+                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
+                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
+                        </span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        Typical deployment for a mid-sized facility takes 2-4 weeks. Our "Digital Twin" setup
+                        accelerates the process by pre-configuring the MES based on your existing CAD and layout data.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details
+                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
+                    <summary
+                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
+                        <span>Where can I ask more questions?</span>
+                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
+                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
+                        </span>
+                    </summary>
+                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        Typical deployment for a mid-sized facility takes 2-4 weeks. Our "Digital Twin" setup
+                        accelerates the process by pre-configuring the MES based on your existing CAD and layout data.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section (Synchronized) -->
+    <section class="py-32 relative overflow-hidden bg-[#F8FFFE]">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tighter leading-[1.1]">Get Started
+            </h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-xl mx-auto">Integrate SuDu AI in your business, makes life
+                easier.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="waitlist.html"
+                    class="w-full sm:w-auto px-8 py-4 bg-sudu-sec text-white font-semibold rounded-full hover:shadow-[0_0_40px_rgba(53,229,162,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                    Book a Demo →
+                </a>
+                <a href="waitlist.html"
+                    class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 flex items-center justify-center">
+                    Get Started for Free
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-[#02221F] pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+            <!-- Left Side: Logo & Contact -->
+            <div class="col-span-1 sm:col-span-2 md:col-span-3 space-y-8 md:space-y-12">
+                <div class="flex flex-col gap-1 items-center md:items-start">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5ZM20 10C25.5228 10 30 14.4772 30 20C30 25.5228 25.5228 30 20 30C14.4772 30 10 25.5228 10 20C10 14.4772 14.4772 10 20 10Z"
+                                    fill="white" />
+                                <circle cx="20" cy="20" r="4" fill="white" />
+                            </svg>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight text-white">SuDu.Ai</span>
+                    </div>
+                    <span class="text-xs text-gray-400 font-medium md:ml-10">makes life easier</span>
+                </div>
+
+                <div class="flex flex-col gap-6 items-center md:items-start">
+                    <div class="flex items-center gap-4 text-gray-400">
+                        <div class="w-5 flex justify-center">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-sm">+603 9055 9389</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-gray-400">
+                        <div class="w-5 flex justify-center">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-sm">hi@aserious.co</span>
+                    </div>
+                    <div class="flex items-start gap-4 text-gray-400">
+                        <div class="w-5 pt-1 flex justify-center">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-sm leading-relaxed">
+                            A Serious Sdn. Bhd.<br>
+                            6-1, Jalan Radin Bagus 1,<br>
+                            Sri Petaling, 57000 Kuala<br>
+                            Lumpur, Malaysia
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Support Links -->
+            <div class="text-center md:text-left">
+                <h4 class="text-white font-semibold mb-6 md:mb-8 text-lg">Support</h4>
+                <ul class="flex flex-col gap-4 text-sm text-gray-400">
+                    <li><a href="product.html" class="hover:text-white transition-colors">Product</a></li>
+                    <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="partner.html" class="hover:text-white transition-colors">Partner</a></li>
+                    <li><a href="index.html#user-guide" class="hover:text-white transition-colors">User Guide</a></li>
+                    <li><a href="careers.html" class="hover:text-white transition-colors">Career</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
+                <div class="text-[10px] text-gray-500 space-y-1 order-2 md:order-1 text-center md:text-left">
+                    <p>© A Serious AI Sdn. Bhd. [ 202301046091 ]</p>
+                    <p>All Rights Reserved 2024</p>
+                </div>
+
+                <div
+                    class="flex flex-wrap justify-center md:justify-end items-center gap-x-4 sm:gap-x-8 gap-y-4 text-[10px] text-gray-500 order-1 md:order-2 w-full md:w-auto">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Cancellation Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="#"
+                        class="bg-white p-1 rounded-sm text-[#011916] hover:bg-gray-200 transition-colors md:ml-4">
+                        <i data-lucide="linkedin" class="w-3 h-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+            }
+        });
+
+        // Scroll Animation Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
