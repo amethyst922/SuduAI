@@ -140,6 +140,18 @@
                 transform: translateY(0);
             }
         }
+
+        /* Reveal Animation Styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -375,7 +387,7 @@
     </section>
 
     <!-- Combined Products Section -->
-    <section id="products-dual" class="py-24 bg-white relative overflow-hidden">
+    <section id="products-dual" class="py-24 bg-white relative overflow-hidden reveal">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
@@ -1022,6 +1034,187 @@
             animation: marquee 40s linear infinite;
         }
     </style>
+
+    <!-- Agent Capabilities Section -->
+    <section class="py-32 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+                <!-- Left Column: Content -->
+                <div class="space-y-12">
+                    <div class="space-y-6">
+                        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 tracking-tighter leading-[1.1]">
+                            Make your users fall in love with Sales!
+                        </h2>
+                        <p class="text-xl text-gray-600 max-w-xl leading-relaxed">
+                            Automate your orders <br> <br>
+                            Al automatically generates sales orders from customer requests, freeing your team from
+                            repetitive work and ensures each sales order is accurate, complete, and delivered on time.
+                        </p>
+                    </div>
+
+                    <!-- Agent List Tabs -->
+                    <div class="space-y-1">
+                        <div class="agent-tab cursor-pointer py-4 text-2xl md:text-3xl font-medium transition-all text-gray-300 hover:text-gray-900"
+                            onclick="switchAgent(0)">
+                            Order Processing Agent
+                        </div>
+                        <div class="agent-tab cursor-pointer py-4 text-2xl md:text-3xl font-medium transition-all text-gray-300 hover:text-gray-900"
+                            onclick="switchAgent(1)">
+                            Inventory Management Agent
+                        </div>
+                        <div class="agent-tab cursor-pointer py-4 text-2xl md:text-3xl font-medium transition-all text-gray-900 active-agent"
+                            onclick="switchAgent(2)">
+                            Production Planning Agent
+                        </div>
+                        <div class="agent-tab cursor-pointer py-4 text-2xl md:text-3xl font-medium transition-all text-gray-300 hover:text-gray-900"
+                            onclick="switchAgent(3)">
+                            Quality Control Agent
+                        </div>
+                        <div class="agent-tab cursor-pointer py-4 text-2xl md:text-3xl font-medium transition-all text-gray-300 hover:text-gray-900"
+                            onclick="switchAgent(4)">
+                            Logistics Support Agent
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Description Area -->
+                    <div id="agent-description"
+                        class="pt-10 border-t border-gray-100 min-h-[140px] transition-opacity duration-300">
+                        <p class="text-gray-600 text-xl leading-relaxed">
+                            SuDu learns from your production guidelines and acts as a virtual coach, guiding your
+                            planners through the complex scheduling process with real-time AI optimization.
+                        </p>
+                    </div>
+
+                    <!-- Metric Footer -->
+                    <div class="pt-8">
+                        <p class="metric-label text-[13px] uppercase tracking-[0.2em] text-gray-400 font-bold mb-3">
+                            Adoption rate of automated planning
+                        </p>
+                        <div class="metric-value text-6xl font-bold text-gray-900 tracking-tighter">98% +</div>
+                    </div>
+
+                    <a href="waitlist.html"
+                        class="inline-flex items-center justify-center px-10 py-5 bg-black text-white font-bold rounded-2xl hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                        Request Demo
+                    </a>
+                </div>
+
+                <!-- Right Column: Visual -->
+                <div class="lg:sticky lg:top-32">
+                    <div
+                        class="bg-gray-50/50 rounded-[40px] p-10 border border-gray-100 aspect-square flex flex-col items-center justify-center relative group">
+                        <span class="text-sm font-medium text-gray-400 absolute top-8 left-10">*Each agent functions
+                            with dedicated workflows</span>
+                        <div
+                            class="w-full h-full bg-white rounded-[32px] border border-gray-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center overflow-hidden relative">
+                            <!-- Visual Placeholder -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+                            <div class="relative z-10 flex flex-col items-center gap-4">
+                                <div
+                                    class="w-20 h-20 rounded-2xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec">
+                                    <i id="agent-icon" data-lucide="cpu" class="w-10 h-10"></i>
+                                </div>
+                                <span id="agent-visual-label" class="text-gray-400 font-medium text-lg">Agent Workflow
+                                    Demo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .active-agent {
+            color: #111827 !important;
+            padding-left: 1rem;
+            border-left: 4px solid #111827;
+        }
+
+        .agent-tab {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .agent-tab:hover:not(.active-agent) {
+            padding-left: 0.5rem;
+        }
+    </style>
+
+    <script>
+        const agents = [
+            {
+                name: "Order Processing Agent",
+                icon: "file-text",
+                description: "AI captures and validates order details from any source, automatically syncing with your ERP to ensure 100% accuracy from the first step.",
+                metricLabel: "Reduction in manual data entry",
+                metricValue: "92%"
+            },
+            {
+                name: "Inventory Management Agent",
+                icon: "package",
+                description: "Predictive AI monitors stock levels in real-time, suggesting reorders before shortages occur and optimizing warehouse space automatically.",
+                metricLabel: "Improvement in inventory accuracy",
+                metricValue: "96%"
+            },
+            {
+                name: "Production Planning Agent",
+                icon: "cpu",
+                description: "SuDu learns from your production guidelines and acts as a virtual coach, guiding your planners through the complex scheduling process with real-time AI optimization.",
+                metricLabel: "Adoption rate of automated planning",
+                metricValue: "98% +"
+            },
+            {
+                name: "Quality Control Agent",
+                icon: "shield-check",
+                description: "Computer vision and data analysis agents detect anomalies early in the production line, reducing waste and ensuring consistent output quality.",
+                metricLabel: "Decrease in defect rates",
+                metricValue: "45%"
+            },
+            {
+                name: "Logistics Support Agent",
+                icon: "truck",
+                description: "End-to-end tracking agents coordinate shipments and manage carrier communication, providing real-time visibility into your supply chain.",
+                metricLabel: "On-time delivery rate improvement",
+                metricValue: "34%"
+            }
+        ];
+
+        function switchAgent(index) {
+            const tabs = document.querySelectorAll('.agent-tab');
+            const descArea = document.getElementById('agent-description');
+            const metricLabel = document.querySelector('.metric-label');
+            const metricValue = document.querySelector('.metric-value');
+            const iconEl = document.getElementById('agent-icon');
+            const visualLabel = document.getElementById('agent-visual-label');
+
+            tabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.classList.add('active-agent');
+                    tab.classList.remove('text-gray-300');
+                    tab.classList.add('text-gray-900');
+                } else {
+                    tab.classList.remove('active-agent');
+                    tab.classList.remove('text-gray-900');
+                    tab.classList.add('text-gray-300');
+                }
+            });
+
+            // Update content with fade effect
+            descArea.style.opacity = 0;
+            setTimeout(() => {
+                descArea.querySelector('p').innerText = agents[index].description;
+                metricLabel.innerText = agents[index].metricLabel;
+                metricValue.innerText = agents[index].metricValue;
+                visualLabel.innerText = agents[index].name + " Workflow";
+
+                // Update Icon
+                iconEl.setAttribute('data-lucide', agents[index].icon);
+                lucide.createIcons();
+
+                descArea.style.opacity = 1;
+            }, 200);
+        }
+    </script>
 
     <!-- Benefits Section (Features) -->
     <section id="features" class="py-24 relative bg-[#FFFBF5]">
@@ -1758,6 +1951,27 @@
                 perBtn.classList.add('text-[#003406]', 'hover:bg-gray-50');
             }
         }
+    </script>
+    <!-- Scroll Reveal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
     </script>
 </body>
 
