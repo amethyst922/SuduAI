@@ -192,7 +192,7 @@
     <!-- Navbar -->
     <nav
         class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 transition-all duration-300 border border-white/10 bg-white/50 backdrop-blur-xl rounded-[10px] px-6 h-14 flex items-center justify-between shadow-2xl shadow-black/50">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 flex-1">
             <div
                 class="w-6 h-6 bg-gradient-to-br from-sudu-sec to-emerald-600 rounded flex items-center justify-center text-black font-bold text-xs shadow-lg shadow-sudu-sec/20">
                 S</div>
@@ -202,18 +202,18 @@
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-6 text-xs font-medium text-[#003406]">
             <a href="product.html" class="hover:text-sudu-sec transition-colors">Product</a>
-            <a href="pricing.html" class="hover:text-sudu-sec transition-colors">Pricing</a>
-            <a href="partner.html" class="hover:text-sudu-sec transition-colors">Partner</a>
-            <a href="#user-guide" class="hover:text-sudu-sec transition-colors">User Guide</a>
             <a href="careers.html" class="hover:text-sudu-sec transition-colors">Career</a>
             <a href="contact.html" class="hover:text-sudu-sec transition-colors">Contact Us</a>
         </div>
 
-        <div class="flex items-center gap-3">
-            <!-- Desktop CTA -->
+        <div class="flex items-center gap-3 flex-1 justify-end">
+            <!-- Desktop CTA Buttons -->
+            <a href="#features"
+                class="hidden md:block text-xs text-[#003406] font-medium bg-transparent hover:bg-gray-50 px-4 py-1.5 rounded-[10px] border border-[#003406] transition-all">See
+                It in Action</a>
             <a href="waitlist.html"
-                class="hidden md:block text-xs text-white font-medium bg-[#003406] hover:bg-sudu-sec/20 text-black px-4 py-1.5 rounded-[10px] border border-sudu-sec/20 transition-all hover:shadow-[0_0_15px_rgba(53,229,162,0.3)]">Join
-                The Waitlist</a>
+                class="hidden md:block text-xs text-white font-medium bg-[#003406] hover:bg-[#002304] px-4 py-1.5 rounded-[10px] transition-all">Request
+                a Demo</a>
 
             <!-- Mobile Hamburger Button -->
             <button id="mobile-menu-btn" class="md:hidden text-black p-2 hover:text-sudu-sec transition-colors">
@@ -228,21 +228,17 @@
         <div class="flex flex-col p-6 space-y-4">
             <a href="product.html"
                 class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Product</a>
-            <a href="pricing.html"
-                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Pricing</a>
-            <a href="partner.html"
-                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Partner</a>
-            <a href="#user-guide" class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">User
-                Guide</a>
             <a href="careers.html"
                 class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Career</a>
             <a href="contact.html"
-                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Contact
-                Us</a>
-            <div class="pt-4 border-t border-white/10">
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Contact Us</a>
+            <div class="pt-4 border-t border-white/10 space-y-2">
+                <a href="#features"
+                    class="block text-center text-sm text-[#003406] font-medium bg-white hover:bg-gray-50 px-4 py-2.5 rounded-full border border-[#003406] transition-all">See
+                    It in Action</a>
                 <a href="waitlist.html"
-                    class="block text-center text-sm text-white font-medium bg-[#003406] hover:bg-sudu-sec/20 text-black px-4 py-2.5 rounded-full border border-sudu-sec/20 transition-all">Join
-                    The Waitlist</a>
+                    class="block text-center text-sm text-white font-medium bg-[#003406] hover:bg-[#002304] px-4 py-2.5 rounded-full transition-all">Request
+                    a Demo</a>
             </div>
         </div>
     </div>
